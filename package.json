@@ -1,0 +1,22 @@
+{
+  "name": "geode",
+  "version": "0.1.0",
+  "description": "A geocoding package for node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arneheggestad/geode.git"
+  },
+  "keywords": [
+    "geocode"
+  ],
+  "author": "Arne Heggestad <arne.heggestad@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arneheggestad/geode/issues"
+  },
+  "homepage": "https://github.com/arneheggestad/geode"
+}
