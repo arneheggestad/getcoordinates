@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/arneheggestad/geode/issues"
   },
-  "homepage": "https://github.com/arneheggestad/geode"
+  "homepage": "https://github.com/arneheggestad/geode",
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "should": "^4.3.1"
+  }
 }
