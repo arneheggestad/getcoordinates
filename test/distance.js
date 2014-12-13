@@ -21,12 +21,12 @@ var stopC = {
 describe('haversine', function (done) {
 	describe('AtoB', function() {
 		it('distance in km', function() {
-			distance.haversine(stopA, stopB).should.equal(717.3);
+			distance.haversine([stopA.latitude, stopA.longitude], [stopB.latitude, stopB.longitude]).should.equal(717.3);
 		});
 	});
 	describe('AtoC', function() {
 		it('distance in km', function() {
-			distance.haversine(stopA, stopC).should.equal(929.4);
+			distance.haversine([stopA.latitude, stopA.longitude], [stopC.latitude, stopC.longitude]).should.equal(929.4);
 		});
 	});
 })
