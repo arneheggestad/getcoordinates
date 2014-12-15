@@ -1,6 +1,9 @@
+// other module dependcies
 var csv = require('csv-to-json');
 
-var distance = require('./lib/distance.js')
+// local file/module dependencies
+var config = require('./config.js'),
+		distance = require('./lib/distance.js')
 		;
 
 var stops = csv.parse('./stops.txt');
