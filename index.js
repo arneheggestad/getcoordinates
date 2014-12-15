@@ -3,6 +3,7 @@ var csv = require('csv-to-json');
 
 // local file/module dependencies
 var config = require('./config.js'),
+		keys = require('./keys.js'),
 		distance = require('./lib/distance.js')
 		;
 
