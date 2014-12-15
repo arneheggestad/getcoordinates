@@ -12,4 +12,5 @@ To implement:
 General thoughts:
 - try to have good defaults so the calls don't have to contain all of the necessary information
 	- at least city/state/country
-- 
+- (optional) query validation 
+- (optional) response validation -- Are the coordinates we're getting close to where we expect them to be, or are they really in South Dakota?
