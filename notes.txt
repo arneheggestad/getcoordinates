@@ -1,0 +1,15 @@
+NOTES/ROADMAP
+
+To implement:
+- geocode by address (400 N Main St, Chattanooga, TN)
+- geocode by intersection (Market and Main St, Chattanooga, TN)
+- caching of results (with lookup prior to making an API call)
+- get results using the geocoder.us API
+- make own database for results?
+- get results using other services
+	- google, mapquest, ???
+
+General thoughts:
+- try to have good defaults so the calls don't have to contain all of the necessary information
+	- at least city/state/country
+- 
