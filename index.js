@@ -5,11 +5,12 @@ var distance = require('./lib/distance.js')
 
 var stops = csv.parse('./stops.txt');
 
-var start = [35.034374, -85.302557];
-var maxDist = 300; // maximum distance in meters
+var start = [35.034374, -85.302557]; // starting point for search
+var radius = 300; // maximum distance in meters
+
 var closeStops = [];
 for (var i = 0; i < stops.length; i++) {
-	if (distance.haversine(start, [stops[i].stop_lat, stops[i].stop_lon]) <= maxDist) {
+	if (distance.haversine(start, [stops[i].stop_lat, stops[i].stop_lon]) <= radius) {
 		closeStops.push(stops[i]);
 	}
 }
