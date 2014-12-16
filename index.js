@@ -32,7 +32,7 @@ geocoder.csv(start, function (err, coords) {
 		}
 		for (var j = 0; j < closeStops.length; j++) {
 			var stop = {
-				lat: closeStops[j].stop_lat, 
+				lat: closeStops[j].stop_lat,
 				lon: closeStops[j].stop_lon
 			};
 			console.log(closeStops[j].stop_name + ': ' + distance.haversine(coords, stop) + ' meters');
