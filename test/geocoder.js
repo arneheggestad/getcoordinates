@@ -1,26 +1,37 @@
 var should = require('should'),
-		geocoder = require('../lib/geocoder.js')
+		geocoder = require('../lib/geocoder.js'),
+		responses = require('./dummyResponses.js')
 		;
 
 var testAddress = '1600 Pennsylvania Ave, Washington DC',
-		csvtestResult = '38.898748,-77.037684,1600 Pennsylvania Ave NW,Washington,DC,20502\n',
-		csvtestCoords = [38.898748, -77.037684],
-		noResults = 'chattanooga, tn'
+		testResult = '38.898748,-77.037684,1600 Pennsylvania Ave NW,Washington,DC,20502\n',
+		testCoords = [38.898748, -77.037684],
+		noResults = '123 Fake Street, Anytown, TN'
 		;
 
 describe('geocoder', function () {
 	describe('csv()', function () {
 		it('should return csv version of the White House', function (done) {
 			geocoder.csv(testAddress, function (err, result) {
-				result.should.eql(csvtestCoords);
+				result.should.eql(testCoords);
 				done();
 			});
 		});
-		it('should return no data', function (done) {
+		it('should return an error for data not found', function (done) {
 			geocoder.csv(noResults, function (err, result) {
-				result.should.eql([]);
-			})
-		})
+				err.should.eql('Could not find address.');
+				done();
+			});
+		});
+	});
+
+	describe('xml()', function () {
+		it('should return xml page about the White House', function (done) {
+			geocoder.xml(testAddress, function (err, result) {
+				result.should.eql(testCoords);
+				done();
+			});
+		});
 	});
 
 });
