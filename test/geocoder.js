@@ -22,7 +22,7 @@ describe('geocoder', function () {
 		});
 		it('should return an error for data not found', function (done) {
 			geocoder.csv(noResults, function (err, result) {
-				err.should.eql('Could not find address.');
+				err.should.eql('no results');
 				done();
 			});
 		});
