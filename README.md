@@ -1,4 +1,4 @@
-getcoordinates [![Code Climate](https://codeclimate.com/github/arneheggestad/getcoordinates/badges/gpa.svg)](https://codeclimate.com/github/arneheggestad/getcoordinates) [![Test Coverage](https://codeclimate.com/github/arneheggestad/getcoordinates/badges/coverage.svg)](https://codeclimate.com/github/arneheggestad/getcoordinates)
+getcoordinates [![Code Climate](https://codeclimate.com/github/arneheggestad/getcoordinates/badges/gpa.svg)](https://codeclimate.com/github/arneheggestad/getcoordinates) [![Test Coverage](https://codeclimate.com/github/arneheggestad/getcoordinates/badges/coverage.svg)](https://codeclimate.com/github/arneheggestad/getcoordinates) [![Build Status](https://travis-ci.org/arneheggestad/getcoordinates.svg?branch=master)](https://travis-ci.org/arneheggestad/getcoordinates)
 =====
 
 
