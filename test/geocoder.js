@@ -8,7 +8,8 @@ var testAddress = '1600 Pennsylvania Ave, Washington DC',
 		testCoords = {
 				lat: 38.898748, 
 				lon: -77.037684},
-		noResults = '123 Fake Street, Anytown, TN'
+		noResults = '123 Fake Street, Anytown, TN',
+		multipleResults = '400 Main St, Chattanooga, TN'
 		;
 
 describe('geocoder', function () {
@@ -28,9 +29,21 @@ describe('geocoder', function () {
 	});
 
 	describe('xml()', function () {
-		it('should return xml page about the White House', function (done) {
+		it('should return coordinates of White House via xml', function (done) {
 			geocoder.xml(testAddress, function (err, result) {
 				result.should.eql(testCoords);
+				done();
+			});
+		});
+		it('should find multiple points', function (done) {
+			geocoder.xml(multipleResults, function (err, result) {
+				err.should.eql('multiple results');
+				done();
+			});
+		});
+		it('should find no points', function (done) {
+			geocoder.xml(noResults, function (err, result) {
+				err.should.eql('no results');
 				done();
 			});
 		});
