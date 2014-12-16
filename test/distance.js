@@ -4,29 +4,29 @@ var should = require('should'),
 
 var stopA = {
 	'name': '5TH ST AND MARKET ST',
-	'latitude': 35.0507,
-	'longitude': -85.30953
+	'lat': 35.0507,
+	'lon': -85.30953
 }
 var stopB = {
 	'name': '11TH ST AND MARKET ST',
-	'latitude': 35.04425,
-	'longitude': -85.30944
+	'lat': 35.04425,
+	'lon': -85.30944
 }
 var stopC = {
 	'name': '12TH ST AND MARKET ST',
-	'latitude': 35.04235,
-	'longitude': -85.30907
+	'lat': 35.04235,
+	'lon': -85.30907
 }
 
 describe('haversine', function (done) {
 	describe('AtoB', function() {
 		it('distance in km', function() {
-			distance.haversine([stopA.latitude, stopA.longitude], [stopB.latitude, stopB.longitude]).should.equal(717.3);
+			distance.haversine(stopA, stopB).should.equal(717.3);
 		});
 	});
 	describe('AtoC', function() {
 		it('distance in km', function() {
-			distance.haversine([stopA.latitude, stopA.longitude], [stopC.latitude, stopC.longitude]).should.equal(929.4);
+			distance.haversine(stopA, stopC).should.equal(929.4);
 		});
 	});
 })
