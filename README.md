@@ -1,9 +1,11 @@
-geode
+getcoordinates [![Code Climate](https://codeclimate.com/github/arneheggestad/getcoordinates/badges/gpa.svg)](https://codeclimate.com/github/arneheggestad/getcoordinates) [![Test Coverage](https://codeclimate.com/github/arneheggestad/getcoordinates/badges/coverage.svg)](https://codeclimate.com/github/arneheggestad/getcoordinates)
 =====
+
+
 A node.js-based geocoding front end.
 
----
-#Notes#
+-----
+##Notes##
 You will need a `keys.js` file if you are using a remote API to perform the geocoding. The file should be in the form:
 ```
 var keys = {
