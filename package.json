@@ -1,5 +1,5 @@
 {
-  "name": "geode",
+  "name": "getcoordinates",
   "version": "0.1.0",
   "description": "A geocoding package for node.js",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arneheggestad/geode.git"
+    "url": "https://github.com/arneheggestad/getcoordinates.git"
   },
   "keywords": [
     "geocode"
@@ -16,9 +16,9 @@
   "author": "Arne Heggestad <arne.heggestad@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arneheggestad/geode/issues"
+    "url": "https://github.com/arneheggestad/getcoordinates/issues"
   },
-  "homepage": "https://github.com/arneheggestad/geode",
+  "homepage": "https://github.com/arneheggestad/getcoordinates",
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-jscs": "^1.3.1",
@@ -28,7 +28,6 @@
     "should": "^4.3.1"
   },
   "dependencies": {
-    "async": "^0.9.0",
     "xml2js": "^0.4.4"
   }
 }
