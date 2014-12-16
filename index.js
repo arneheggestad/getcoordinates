@@ -22,7 +22,11 @@ geocoder.csv(start, function (err, coords) {
 	if (coords) {
 		console.log(coords);
 		for (var i = 0; i < stops.length; i++) {
-			if (distance.haversine(coords, [stops[i].stop_lat, stops[i].stop_lon]) <= radius) {
+			var testCoords = {
+				lat: stops[i].stop_lat,
+				lon: stops[i].stop_lon
+			};
+			if (distance.haversine(coords, testCoords) <= radius) {
 				closeStops.push(stops[i]);
 			}
 		}
