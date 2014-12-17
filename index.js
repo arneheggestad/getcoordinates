@@ -3,10 +3,50 @@
 // local file/module dependencies
 var config = require('./config/config.js'),
 		distance = require('./lib/distance.js'),
-		geocoder = require('./lib/geocoder.js'),
-		keys = require('./config/keys.js')
+		geocoder = require('./lib/geocoder.js')
 		;
 
-var getCoordinates = function (address, options, callback) {
-	
+var defaultOptions = {
+	service: 'geocoder.us',
+	geocoder: {
+		type: 'csv',
+		userID: null,
+		pass: null
+	},
+	mapquest: {
+		type: 'open',
+		key: null
+	}
 }
+
+var getCoordinates = function (address, options, callback) {
+	if (!options) {
+		var options = defaultOptions;
+	}
+	switch (options.service) {
+		case 'geocoder.us':
+			console.log(options);
+			if (!options.geocoder) {
+				options.geocoder = defaultOptions.geocoder;
+			}
+			if (options.geocoder && options.geocoder.type) {
+				if (options.geocoder.type === 'csv') {
+					console.log(options);
+					geocoder.csv(address, options, callback);
+					break;
+				} else if (options.geocoder.type === 'xml') {
+					geocoder.xml(address, options, callback);
+					break;
+				}
+			}
+			break;
+		case 'mapquest':
+			mapquest.open(address, options, callback);
+			break;
+		default:
+			geocoder.csv(address, options, callback);
+			break;
+	}
+}
+
+module.exports = getCoordinates;
