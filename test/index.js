@@ -1,6 +1,6 @@
 var should = require('should'),
 		index = require('../index.js'),
-		keys = require('../config/keys.js')
+		keys = require('./data/keys.js')
 		;
 
 var options = {},
