@@ -3,7 +3,8 @@
 // local file/module dependencies
 var config = require('./config/config.js'),
 		distance = require('./lib/distance.js'),
-		geocoder = require('./lib/geocoder.js')
+		geocoder = require('./lib/geocoder.js'),
+		mapquest = require('./lib/mapquest.js')
 		;
 
 var defaultOptions = {
@@ -12,7 +13,7 @@ var defaultOptions = {
 		type: 'csv',
 		auth: {
 			username: null,
-			password: null			
+			password: null
 		}
 	},
 	mapquest: {
@@ -22,9 +23,6 @@ var defaultOptions = {
 }
 
 var getCoordinates = function (address, options, callback) {
-	if (!options) {
-		var options = defaultOptions;
-	}
 	switch (options.service) {
 		case 'geocoder.us':
 			if (!options.geocoder) {
