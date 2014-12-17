@@ -20,5 +20,7 @@ getcoordinates.(location, options, callback);
 
 `options` is an object that can be used to select the geocoding service desired and provide the necessary credentials. Presently, only `options.service = 'geocoder.us'` is functional.
 
+If an API offers more than one endpoint and you have a preference, that preference can be set in `options.<service>.type`. For example, the geocoder.us service can return data in either csv or xml format, which can be selected with `options.geocoder.type: 'csv'` or `'xml'`.
+
 Authentication credentials will be passed in the `options.<service>.auth` namespace, as appropriate for the service. Username and password for the geocoder.us service are stored as `options.geocoder.auth.username` and `options.geocoder.auth.password` respectively.
 
