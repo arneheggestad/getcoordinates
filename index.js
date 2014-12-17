@@ -32,7 +32,6 @@ var getCoordinates = function (address, options, callback) {
 			}
 			if (options.geocoder && options.geocoder.type) {
 				if (options.geocoder.type === 'csv') {
-					console.log(options);
 					geocoder.csv(address, options, callback);
 					break;
 				} else if (options.geocoder.type === 'xml') {
