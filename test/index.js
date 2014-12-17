@@ -1,5 +1,6 @@
 var should = require('should'),
-		index = require('../index.js')
+		index = require('../index.js'),
+		keys = require('../config/keys.js')
 		;
 
 var options = {},
@@ -10,14 +11,22 @@ var options = {},
 		;
 
 describe('geocoder', function () {
-	describe('success', function () {
-		options.service = 'geocoder.us';
+	options.service = 'geocoder.us';
+	describe('default-service', function () {
 		it('should find the White House without a login', function (done) {
 			index(address, options, function (err, coords) {
 				coords.should.eql(geocoderWhiteHouseCoords);
 				done();
-			})
-		})
-
+			});
+		});
+	});
+	describe('with-auth', function () {
+		it('should find the White House with a login', function (done) {
+			options.geocoder.auth.username = keys.geocoder.username + ':' + keys.geocoder.password;
+			index(address, options, function (err, coords) {
+				coords.should.eql(geocoderWhiteHouseCoords);
+				done();
+			});
+		});
 	})
 })
