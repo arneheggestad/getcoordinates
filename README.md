@@ -2,19 +2,23 @@ getcoordinates [![Code Climate](https://codeclimate.com/github/arneheggestad/get
 =====
 
 
-A node.js-based geocoding front end.
+A general geocoding module for node.js.
 
 -----
-##Notes##
-You will need a `keys.js` file if you are using a remote API to perform the geocoding. The file should be in the form:
+
+This module is intended to be a way to access as many geocoding services as possible. The module currently works with the API provided by [geocoder.us](http://geocoder.us), with plans to expand to [MapQuest's open API](http://www.mapquestapi.com/geocoding/) next. Services may be selected with the `options` object as described below.
+
+#Use
+
 ```
-var keys = {
-	'service': {
-		'username': '*username*',
-		'password': '*password*'
-	}
-}
-module.exports = keys;
+var getcoordinates = require('getcoordinates');
+
+getcoordinates.(location, options, callback);
 ```
 
-There is a `notes.txt` file for general notes and thoughts; essentially, a shared scratchpad.
+#options
+
+`options` is an object that can be used to select the geocoding service desired and provide the necessary credentials. Presently, only `options.service = 'geocoder.us'` is functional.
+
+Authentication credentials will be passed in the `options.<service>.auth` namespace, as appropriate for the service. Username and password for the geocoder.us service are stored as `options.geocoder.auth.username` and `options.geocoder.auth.password` respectively.
+

@@ -1,7 +1,7 @@
 {
   "name": "getcoordinates",
   "version": "0.1.0",
-  "description": "A geocoding package for node.js",
+  "description": "A general geocoding module for node.js",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -11,7 +11,7 @@
     "url": "https://github.com/arneheggestad/getcoordinates.git"
   },
   "keywords": [
-    "geocode"
+    "geocode", "geocoder.us", "tiger"
   ],
   "author": "Arne Heggestad <arne.heggestad@gmail.com>",
   "license": "MIT",
