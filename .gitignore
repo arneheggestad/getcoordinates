@@ -27,8 +27,5 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
-# API Keys
-keys.js
-
 # Other
 xmlExamples.txt
