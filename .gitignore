@@ -29,3 +29,5 @@ node_modules
 
 # Other
 xmlExamples.txt
+notes.txt
+.DS_Store
