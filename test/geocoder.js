@@ -1,6 +1,7 @@
 var should = require('should'),
 		geocoder = require('../lib/geocoder.js'),
-		responses = require('./dummyResponses.js')
+		responses = require('./dummyResponses.js'),
+		keys = require('../config/keys')
 		;
 
 var testAddress = '1600 Pennsylvania Ave, Washington DC',
@@ -12,16 +13,28 @@ var testAddress = '1600 Pennsylvania Ave, Washington DC',
 		multipleResults = '400 Main St, Chattanooga, TN'
 		;
 
+var options = {
+	service: 'geocoder.us',
+	geocoder: {
+		type: '',
+		auth: {
+			username: keys.geocoder.username,
+			password: keys.geocoder.password
+		}
+	}
+};
+
 describe('geocoder', function () {
 	describe('csv()', function () {
+		options.geocoder.type = 'csv';
 		it('should return csv version of the White House', function (done) {
-			geocoder.csv(testAddress, function (err, result) {
+			geocoder.csv(testAddress, options, function (err, result) {
 				result.should.eql(testCoords);
 				done();
 			});
 		});
 		it('should return an error for data not found', function (done) {
-			geocoder.csv(noResults, function (err, result) {
+			geocoder.csv(noResults, options, function (err, result) {
 				err.should.eql('no results');
 				done();
 			});
@@ -29,20 +42,21 @@ describe('geocoder', function () {
 	});
 
 	describe('xml()', function () {
+		options.geocoder.type = 'xml';
 		it('should return coordinates of White House via xml', function (done) {
-			geocoder.xml(testAddress, function (err, result) {
+			geocoder.xml(testAddress, options, function (err, result) {
 				result.should.eql(testCoords);
 				done();
 			});
 		});
 		it('should find multiple points', function (done) {
-			geocoder.xml(multipleResults, function (err, result) {
+			geocoder.xml(multipleResults, options, function (err, result) {
 				err.should.eql('multiple results');
 				done();
 			});
 		});
 		it('should find no points', function (done) {
-			geocoder.xml(noResults, function (err, result) {
+			geocoder.xml(noResults, options, function (err, result) {
 				err.should.eql('no results');
 				done();
 			});

@@ -11,10 +11,10 @@ var testAddress = '1600 Pennsylvania Ave NW, Washington DC',
 		multipleResults = '400 Main St, Chattanooga, TN'
 		;
 
-describe('open-API', function () {
-	describe('white house', function (done) {
-		mapquest.open(testAddress, function (err, coords) {
-			coords.should.eql(testCoods);
-		})
-	})
-})
+// describe('open-API', function () {
+// 	describe('white house', function (done) {
+// 		mapquest.open(testAddress, function (err, coords) {
+// 			coords.should.eql(testCoods);
+// 		})
+// 	})
+// })
