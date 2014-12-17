@@ -1,9 +1,9 @@
 var should = require('should'),
-		mapquest = require('../lib/mapquest.js')
+		mapquest = require('../lib/mapquest.js'),
+		demoResponses = require('./data/mapquestResponses.js')
 		;
 
 var testAddress = '1600 Pennsylvania Ave NW, Washington DC',
-		testResult = '38.898748,-77.037684,1600 Pennsylvania Ave NW,Washington,DC,20502\n',
 		testCoords = {
 		// note: these are *slightly* different than those from geocoder.us
 			lat: 38.897699, 
@@ -15,9 +15,20 @@ var testAddress = '1600 Pennsylvania Ave NW, Washington DC',
 describe('open-API', function () {
 	it('should return coordinates for the white house', function (done) {
 		mapquest.open(testAddress, function (err, coords) {
-			console.log(err);
 			coords.should.eql(testCoords);
 			done();
-		})
-	})
-})
+		});
+	});
+	it('should return multiple results', function (done) {
+		mapquest.open(multipleResults, function (err, coords) {
+			err.should.eql('multiple results');
+			done();
+		});
+	});
+	// it('should return no results', function (done) {
+	// 	mapquest.open(noResults, function (err, coords) {
+	// 		err.should.eql('no results');
+	// 		done();
+	// 	});
+	// });
+});
