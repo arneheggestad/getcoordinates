@@ -10,8 +10,10 @@ var defaultOptions = {
 	service: 'geocoder.us',
 	geocoder: {
 		type: 'csv',
-		userID: null,
-		pass: null
+		auth: {
+			username: null,
+			password: null			
+		}
 	},
 	mapquest: {
 		type: 'open',
@@ -25,7 +27,6 @@ var getCoordinates = function (address, options, callback) {
 	}
 	switch (options.service) {
 		case 'geocoder.us':
-			console.log(options);
 			if (!options.geocoder) {
 				options.geocoder = defaultOptions.geocoder;
 			}
