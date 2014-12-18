@@ -24,3 +24,11 @@ If an API offers more than one endpoint and you have a preference, that preferen
 
 Authentication credentials will be passed in the `options.<service>.auth` namespace, as appropriate for the service. Username and password for the geocoder.us service are stored as `options.geocoder.auth.username` and `options.geocoder.auth.password` respectively.
 
+-----
+#API Keys
+
+NB: Developers using this package will need their own API keys to use the geocoding services.
+
+* geocoder.us: [geocoder.us/user/signup](http://geocoder.us/user/signup)
+* Google Maps: ...
+* Here.com: [developer.here.com](http://developer.here.com)
