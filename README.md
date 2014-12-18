@@ -6,7 +6,7 @@ A general geocoding module for node.js.
 
 -----
 
-This module is intended to be a way to access as many geocoding services as possible. The module currently works with the API provided by [geocoder.us](http://geocoder.us), with plans to expand to [MapQuest's open API](http://www.mapquestapi.com/geocoding/) next. Services may be selected with the `options` object as described below.
+This module is intended to be a way to access as many geocoding services as possible. The module currently works with the APIs provided by [geocoder.us](http://geocoder.us) and by [Here.com](https://developer.here.com/rest-apis/documentation/geocoder), with plans to expand to [MapQuest's open API](http://www.mapquestapi.com/geocoding/) next. Services may be selected with the `options` object as described below.
 
 #Use
 
@@ -22,7 +22,7 @@ getcoordinates.(location, options, callback);
 
 If an API offers more than one endpoint and you have a preference, that preference can be set in `options.<service>.type`. For example, the geocoder.us service can return data in either csv or xml format, which can be selected with `options.geocoder.type: 'csv'` or `'xml'`.
 
-Authentication credentials will be passed in the `options.<service>.auth` namespace, as appropriate for the service. Username and password for the geocoder.us service are stored as `options.geocoder.auth.username` and `options.geocoder.auth.password` respectively.
+Authentication credentials will be passed in the `options.<service>.auth` namespace, as appropriate for the service. Username and password for the geocoder.us service are stored as `options.geocoder.auth.username` and `options.geocoder.auth.password` respectively. The names for authentication credentials have been kept the same as what they are called by their respective APIs. See the `defaultOptions` in `index.js` for examples.
 
 -----
 #API Keys

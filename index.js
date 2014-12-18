@@ -4,6 +4,7 @@
 var config = require('./config/config.js'),
 		distance = require('./lib/distance.js'),
 		geocoder = require('./lib/geocoder.js'),
+		here = require('./lib/here.js'),
 		mapquest = require('./lib/mapquest.js')
 		;
 
@@ -14,6 +15,13 @@ var defaultOptions = {
 		auth: {
 			username: null,
 			password: null
+		}
+	},
+	here: {
+		type: '',
+		auth: {
+			app_id: null,
+			app_code: null
 		}
 	},
 	mapquest: {
@@ -37,6 +45,9 @@ var getCoordinates = function (address, options, callback) {
 					break;
 				}
 			}
+			break;
+		case 'here':
+			here.geocode(address, options, callback);
 			break;
 		case 'mapquest':
 			mapquest.open(address, options, callback);
