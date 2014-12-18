@@ -31,4 +31,4 @@ NB: Developers using this package will need their own API keys to use the geocod
 
 * geocoder.us: [geocoder.us/user/signup](http://geocoder.us/user/signup)
 * Google Maps: ...
-* Here.com: [developer.here.com](http://developer.here.com)
+* Here.com: [developer.here.com/get-started](http://developer.here.com)
