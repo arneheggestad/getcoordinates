@@ -74,6 +74,6 @@ describe('xml-parsing-for-here', function () {
 		here.parseResponse(xmlNoResponse, function (err, pointsArray) {
 			err.should.equal('no results');
 			done();
-		})
-	})
-})
+		});
+	});
+});
