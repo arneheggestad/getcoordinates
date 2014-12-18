@@ -8,10 +8,14 @@ var keys = {
 			clientID: '148425',
 			key: 'Fmjtd%7Cluurn1uzn1%2Caa%3Do5-9wy514'
 		},
-		licensed: ''
+		licensed: null
 	},
-	google: '',
-	bing: ''
+	google: null,
+	bing: null,
+	here: {
+		appID: 'I008Gt16vTzsiVuBhGSB',
+		appCode: 'umq0cG_L3eL9AaozWTydtg'
+	}
 }
 
 module.exports = keys;
