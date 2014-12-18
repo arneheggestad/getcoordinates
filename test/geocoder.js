@@ -1,6 +1,5 @@
 var should = require('should'),
 		geocoder = require('../lib/geocoder.js'),
-		responses = require('./dummyResponses.js'),
 		keys = require('./data/keys.js')
 		;
 
