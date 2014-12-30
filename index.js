@@ -53,6 +53,9 @@ var getCoordinates = function (address, options, callback) {
 			mapquest.open(address, options, callback);
 			break;
 		default:
+			if (!options.geocoder) {
+				options.geocoder = defaultOptions.geocoder;
+			}
 			geocoder.csv(address, options, callback);
 			break;
 	}
