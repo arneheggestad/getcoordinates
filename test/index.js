@@ -10,7 +10,7 @@ var options = {},
 				lon: -77.037684}
 		;
 
-describe('geocoder', function () {
+describe('index: geocoder', function () {
 	options.service = 'geocoder.us';
 	describe('default-service', function () {
 		it('should find the White House without a login', function (done) {
@@ -28,5 +28,5 @@ describe('geocoder', function () {
 				done();
 			});
 		});
-	})
-})
+	});
+});
